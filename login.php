@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "koneks.php";
+include "koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,12 @@ include "koneks.php";
             if (mysqli_num_rows($query) > 0){
                 $data = mysqli_fetch_array($query);
                 $_SESSION['user'] = $data;
+                echo'<script>alert("Selamat datang, '.$data['nama'].'")  
+                    location.href="index.php"</script>';
+            }else{
+
+                echo '<script>alert("Username/password tidak sesuai.");</script>';
+
             }
         }
 
