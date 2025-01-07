@@ -15,15 +15,16 @@ include "koneksi.php";
         if(isset($_POST['username'])){
             $nama = $_POST['nama'];
             $username = $_POST['username'];
-            $password = md5$_POST['password'];
+            $password = md5($_POST['password']);
 
             $query = mysqli_query($koneksi,"INSERT INTO user(nama,username,password) 
                 values('$nama','$username','$password')");
-            if($query)
-                echo '<script>alert("Selamat, Pendafataran anda berhasil,")</script>';
-                }else{
-                 echo '<script>alert(",")</script>';
-        }
+            if ($query) {
+                echo '<script>alert("Selamat, Pendaftaran anda berhasil.")</script>';
+            } else {
+                echo '<script>alert("Pendaftaran Gagal.")</script>';
+            }
+            
 
     ?>
     <form method="post">
