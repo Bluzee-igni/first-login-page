@@ -16,6 +16,7 @@ include "koneksi.php";
             $nama = $_POST['nama'];
             $username = $_POST['username'];
             $password = md5($_POST['password']);
+        
 
             $query = mysqli_query($koneksi,"INSERT INTO user(nama,username,password) 
                 values('$nama','$username','$password')");
@@ -24,7 +25,7 @@ include "koneksi.php";
             } else {
                 echo '<script>alert("Pendaftaran Gagal.")</script>';
             }
-            
+        }  
 
     ?>
     <form method="post">
@@ -36,6 +37,10 @@ include "koneksi.php";
             <tr>
                 <td>Nama</td>
                 <td><input type="text" name="nama"></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username"></td>
             </tr>
             <tr>
                 <td>Password</td>
